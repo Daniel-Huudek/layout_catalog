@@ -1,3 +1,36 @@
-body {
+* {
+  padding: 0;
   margin: 0;
+  font-family: Roboto, sans-serif;
+  box-sizing: border-box;
+}
+
+@import './utils/variables';
+@import './header';
+@import './card';
+
+.main {
+  display: grid;
+  justify-content: center;
+  grid-template-columns: repeat(1, 200px);
+  gap: 48px 46px;
+  padding: 50px 40px;
+}
+
+@media screen and (min-width: 488px) {
+  .main {
+    grid-template-columns: repeat(2, 200px);
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .main {
+    grid-template-columns: repeat(3, 200px);
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .main {
+    grid-template-columns: repeat(4, 200px);
+  }
 }
