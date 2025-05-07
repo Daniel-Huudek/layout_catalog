@@ -1,13 +1,17 @@
 .card {
   display: flex;
   flex-direction: column;
-  max-width: 200px;
+  align-items: center;
+  justify-content: center;
   padding: 16px;
   border: 1px solid $grey-elements;
   border-radius: 5px;
+  transition: all 300ms ease;
 
   img {
     margin-top: 16px;
+    width: 160px;
+    height: 134px;
   }
 
   &__content {
@@ -15,31 +19,35 @@
     flex-direction: column;
   }
 
-  &__description {
+  &__title {
     margin-top: 40px;
-    line-height: 16px;
+    line-height: 18px;
     color: $main-ascent-color;
 
     p:first-child {
       font-weight: 500;
       font-size: 12px;
+      line-height: 18px;
       color: $main-ascent-color;
     }
 
     p:last-child {
       font-weight: 400;
       font-size: 10px;
+      line-height: 14px;
       color: $secondary;
-      margin-top: 8px;
+      margin-top: 4px;
     }
   }
 
   &__rating {
     display: flex;
     justify-content: space-between;
-    align-items: center;
+    align-items: end;
     font-size: 10px;
+    line-height: 14px;
     font-weight: 400;
+    font-style: normal;
     margin-top: 16px;
     margin-bottom: 16px;
     color: $main-ascent-color;
@@ -51,11 +59,14 @@
     }
 
     .stars__star {
-      width: 16px;
-      height: 16px;
+      width: 15px;
+      height: 15px;
+      line-height: 14px;
       margin-right: 4px;
       background-image: url('../images/star.svg');
       background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
     }
 
     .stars--4 .stars__star:nth-child(-n + 4) {
@@ -70,6 +81,7 @@
     width: 100%;
     margin-top: 8px;
     margin-bottom: 16px;
+    color: $secondary;
 
     p:first-child {
       font-size: 12px;
@@ -86,13 +98,16 @@
 
   &__button {
     background-color: $blue-ascent-color;
-    border-radius: 5px;
+    width: 166px;
+    height: 40px;
+    border-radius: 4px;
     text-transform: uppercase;
     font-size: 14px;
     font-weight: 700;
+    line-height: 16px;
     color: white;
     padding: 12px 0;
-    border: none;
+    border: 1px solid transparent;
   }
 
   &__button:hover {
@@ -100,6 +115,15 @@
     border: 1px solid $blue-ascent-color;
     color: $blue-ascent-color;
     cursor: pointer;
-    transition: all 300ms ease;
+  }
+}
+
+.card:hover {
+  scale: 120%;
+}
+
+.card:hover .card__title {
+  p:first-child {
+    color: #34568b;
   }
 }
